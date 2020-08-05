@@ -84,6 +84,9 @@ class OrderNotesModel extends Model
      */
     public function getUsername()
     {
+        if (!$this->getUser()) {
+            return null;
+        }
         return $this->getUser()->username;
     }
 
